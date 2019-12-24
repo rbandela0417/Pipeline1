@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage ('Initialize') {
             steps {
-                bat '''
+                sh '''
                     
                     echo "M2 = %M2%"
                 '''
@@ -18,7 +18,7 @@ pipeline {
 
         stage ('Build') {
             steps {
-                    bat 'cd NumberGenerator & mvn install'
+                    sh 'cd NumberGenerator & mvn install'
             }
              post {
                 success {
